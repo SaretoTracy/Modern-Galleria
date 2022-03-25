@@ -3,13 +3,9 @@ from django.http  import HttpResponse
 import datetime as dt
 
 # Create your views here.
-def welcome(request):    
+def main(request):  
+
+    # Function that gets the date
     date = dt.date.today()
-    html = f'''
-        <html>
-            <body>
-                <h1> {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+
+    return render(request, 'main.html',{"date": date})
