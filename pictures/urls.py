@@ -6,6 +6,7 @@ from .models import UrlDateConverter
 
 urlpatterns = [
     path('',views.main,name = 'main'),
+   
 ]
 
 #serve uploaded images on the development server 

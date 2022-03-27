@@ -1,6 +1,15 @@
 from django.db import models
 import datetime as dt
 # Create your models here.
+class Category(models.Model):
+    category = models.CharField(max_length =30)
+    def __str__(self):
+        return self.category
+    def save_category(self):
+        self.save()
+    def delete_category(self):
+        self.delete()
+    
 class Location(models.Model):
     location = models.CharField(max_length =30)
     def __str__(self):
@@ -9,14 +18,14 @@ class Location(models.Model):
         self.save()
     def delete_location(self):
         self.delete()
-    
+
 
 class Galore(models.Model):
     title = models.CharField(max_length=60)
     image = models.ImageField(upload_to = 'photos/', default="")
     description = models.TextField()
     location = models.ManyToManyField('location')
-    # category = models.ManyToManyField(category)
+    category = models.ManyToManyField('category')
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -31,4 +40,6 @@ class Galore(models.Model):
         today = dt.date.today()
         post = cls.objects.filter(pub_date__date = today)
         return post
+   
+
 

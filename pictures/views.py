@@ -11,3 +11,4 @@ def main(request):
     post = Galore.days_post()
 
     return render(request, 'main.html',{"date": date,"post":post})
+
