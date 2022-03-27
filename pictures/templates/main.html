@@ -10,17 +10,17 @@
             <h2 class="text-center"> {{ post_item.description }} </h2>
             <h2 class="text-center"> {{ post_item.pub_date|timesince }} </h2>
         </div>
-        <!--Display news Article images  -->
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin-top: 10px; ">
-            <a href=""> <img src="{{post_item.image_pic}}" class="img-responsive" alt="Image" style="height: 200px; width: 300px; ">
-            </a>
-        </div>
-        {%endfor%}
-        <!-- <p>Posted by {{galore.pub_date|timesince}}</p> -->
-        <!--Display news Article images  -->
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin-top: 10px; ">
-            <a href=""> <img src="{{news_item.article_image.url}}" class="img-responsive" alt="Image" style="height: 200px; width: 300px; ">
-            </a>
-        </div>
-        <p>{{date|date:"l d-F Y"}}</p>
-    </div> {%endblock%}
+    </div>
+    <!--Display news Galore images  -->
+
+    <div class=" pic" style="margin-top: 10px; ">
+        <a href="">
+            <img src="{{post_item.image.url}}" class="img-responsive" alt="Image" style="height: 200px; width: 300px; ">
+        </a>
+    </div>
+
+    {%endfor%}
+
+
+    <p>{{date|date:"l d-F Y "}}</p>
+    {%endblock%}
