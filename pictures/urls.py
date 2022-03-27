@@ -6,7 +6,7 @@ from .models import UrlDateConverter
 
 urlpatterns = [
     path('',views.main,name = 'main'),
-    path (r'^search/', views.search_results, name='search_results'),
+    path ('search/', views.search_results, name='search_results'),
 ]
 
 #serve uploaded images on the development server 

@@ -42,7 +42,7 @@ class Galore(models.Model):
         return post
     @classmethod
     def search_by_category(cls, category_term):
-        photo= cls.objects.filter(category__icontains=category_term)
+        photo= cls.objects.filter(category__category__icontains=category_term)
         return photo
 
 
