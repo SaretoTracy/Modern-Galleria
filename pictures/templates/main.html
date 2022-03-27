@@ -1,25 +1,35 @@
 {%extends 'base.html'%} {% block content %} {{block.super}}
-<h1>WELCOME</h1>
-<div class="row">
-    <!-- Looping through news   -->
-    {% for post_item in post %}
-    <div class="row">
-        <!-- displaying post articles -->
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <h2 class="text-center"> {{ post_item.title }} </h2>
-            <h2 class="text-center"> {{ post_item.description }} </h2>
-            <h2 class="text-center"> {{ post_item.pub_date|timesince }} </h2>
+<form class="navbar-form" role="filter" action="{% url 'photo_location' %}">
+
+    <div class="input-group location">
+        <input type="text" class="form-control" placeholder="filter by location" name="image">
+        <div class="input-group-btn">
+            <button class="btn btn-default bg-dark text-white " type="submit">Search</button>
         </div>
     </div>
-    <!--Display news Galore images  -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin-top: 10px; ">
-        <a href=""> <img src="{{post_item.image.url}}" class="img-responsive" alt="Image" style="height: 200px; width: 300px; ">
+
+</form>
+
+<h1>WELCOME</h1>
+<div class="row">
+    <!-- Looping through post   -->
+    <div class="container-fluid">
+        <div class="row">
+            {% for post_item in post %}
+            <!-- displaying post images -->
+            <div class="col-md-4 mt-3">
+                <h2 class="text-center"> {{ post_item.title }} </h2>
+                <h2 class="text-center"> {{ post_item.description }} </h2>
+                <h2 class="text-center"> {{ post_item.pub_date|timesince }} </h2>
+            </div>
+        </div>
+    </div>
+    <!--Display  Galore images  -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 display" style="margin-top: 10px; ">
+        <a href="">
+            <p src="{{post_item.image.url}}" class="img-responsive" alt="Image" style="height: 200px; width: 300px; "></p>
         </a>
     </div>
 </div>
-</div>
-{%endfor%}
 
-
-<p>{{date|date:"l d-F Y "}}</p>
-{%endblock%}
+{%endfor%} </div>{%endblock%}
