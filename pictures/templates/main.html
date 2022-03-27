@@ -1,4 +1,7 @@
 {%extends 'base.html'%} {% block content %} {{block.super}}
 <h1>WELCOME</h1>
-<p>{{date|date:"l d-F Y"}}</p>
-{%endblock%}
+<div class="row">
+    <p>Posted {{article.pub_date|timesince}} by {{article.editor.first_name}}</p>
+
+    <p>{{date|date:"l d-F Y"}}</p>
+    </div {%endblock%}
