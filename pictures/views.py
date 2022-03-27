@@ -12,3 +12,14 @@ def main(request):
 
     return render(request, 'main.html',{"date": date,"post":post})
 
+def search_results(request):
+    if 'galore' in request.GET and request.GET["galore"]:
+        category_term = request.GET.get('galore')
+        searchname= Galore.search_by_category(category_term)
+        message = f"{category_term}"
+
+        return render(request, 'search.html',{"message":message, "galore":searchname})
+
+    else:
+       message = "You haven't searched for any term"
+       return render(request, 'search.html',{"message":message})

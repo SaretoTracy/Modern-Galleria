@@ -40,6 +40,9 @@ class Galore(models.Model):
         today = dt.date.today()
         post = cls.objects.filter(pub_date__date = today)
         return post
-   
+    @classmethod
+    def search_by_category(cls, category_term):
+        photo= cls.objects.filter(category__icontains=category_term)
+        return photo
 
 
