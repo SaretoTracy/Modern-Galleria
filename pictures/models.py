@@ -1,5 +1,5 @@
 from django.db import models
-
+import datetime as dt
 # Create your models here.
 class Location(models.Model):
     location = models.CharField(max_length =30)
@@ -9,9 +9,11 @@ class Location(models.Model):
         self.save()
     def delete_location(self):
         self.delete()
+    
+
 class Galore(models.Model):
     title = models.CharField(max_length=60)
-    image_pic = models.ImageField(upload_to = 'photos/', null=True)
+    image_pic = models.ImageField(upload_to = 'photos/', default="")
     description = models.TextField()
     location = models.ManyToManyField('location')
     # category = models.ManyToManyField(category)
@@ -24,4 +26,9 @@ class Galore(models.Model):
         self.save()
     def delete_galleria(self):
         self.delete()
+    @classmethod
+    def days_post(cls):
+        today = dt.date.today()
+        post = cls.objects.filter(pub_date__date = today)
+        return post
 

@@ -8,6 +8,6 @@ def main(request):
 
     # Function that gets the date
     date = dt.date.today()
-    # post = Galore.days_post()
+    post = Galore.days_post()
 
-    return render(request, 'main.html',{"date": date})
+    return render(request, 'main.html',{"date": date,"post":post})
