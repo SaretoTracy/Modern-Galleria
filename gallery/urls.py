@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.main,name = 'main'),
     path ('search/', views.search_results, name='search_results'),
-    path('location/', views.photo_location, name='photo_location')
+    path('location/', views.photo_location, name='photo_location'),
+   
+
 ]

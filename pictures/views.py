@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http  import HttpResponse
+from django.core.exceptions import ObjectDoesNotExist
 from .models import Galore
 import datetime as dt
 
@@ -30,10 +31,10 @@ def photo_location(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'location.html',{"message":message})
-def display_image(request, image_id):
+def display(request,galore_id):
     try:
-        image = Galore.objects.get(id = image_id)
+       galore =Galore.objects.get(id =galore_id)
     except ObjectDoesNotExist:
         raise Http404()
-
-    return render(request, 'display.html', {'image': image})
+    return render(request,'display.html', {"galore":galore})
+    

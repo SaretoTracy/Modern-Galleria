@@ -1,14 +1,18 @@
 {%extends 'base.html'%} {% block content %} {{block.super}}
-<form class="navbar-form" role="filter" action="{% url 'photo_location' %}">
+<div class="col-sm-4 col-md-4 navbar-right">
 
-    <div class="input-group location">
-        <input type="text" class="form-control" placeholder="filter by location" name="image">
-        <div class="input-group-btn">
-            <button class="btn btn-default bg-dark text-white " type="submit">Search</button>
+
+    <form class="navbar-form" role="search" action="">
+
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search by location" name="galore">
+            <div class="input-group-btn">
+                <button class="btn btn-default " type="submit">Search</button>
+            </div>
         </div>
-    </div>
 
-</form>
+    </form>
+</div>
 
 <h1>WELCOME</h1>
 <div class="row">
