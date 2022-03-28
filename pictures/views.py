@@ -9,7 +9,7 @@ def main(request):
 
     # Function that gets the date
     post = Galore.objects.all()
-    return render(request, 'main.html',{"post":post})
+    return render(request, 'main.html',{"posts":post})
 
 def search_results(request):
     if 'galore' in request.GET and request.GET["galore"]:
@@ -31,10 +31,11 @@ def photo_location(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'location.html',{"message":message})
+        # Viewing a single picture
 def display(request,galore_id):
     try:
        galore =Galore.objects.get(id =galore_id)
     except ObjectDoesNotExist:
         raise Http404()
     return render(request,'display.html', {"galore":galore})
-    
+

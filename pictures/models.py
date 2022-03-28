@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 import datetime as dt
 # Create your models here.
 class Category(models.Model):
@@ -22,7 +23,7 @@ class Location(models.Model):
 
 class Galore(models.Model):
     title = models.CharField(max_length=60)
-    image = models.ImageField(upload_to = 'photos/', default="")
+    image = CloudinaryField('image/', default="")
     description = models.TextField()
     location = models.ManyToManyField('location')
     category = models.ManyToManyField('category')

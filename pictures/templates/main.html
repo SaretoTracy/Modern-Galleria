@@ -19,21 +19,18 @@
     <!-- Looping through post   -->
     <div class="container-fluid">
         <div class="row">
-            {% for post_item in post %}
+            {% for post_item in posts %}
             <!-- displaying post images -->
             <div class="col-md-4 mt-3">
-                <h2 class="text-center"> {{ post_item.title }} </h2>
-                <h2 class="text-center"> {{ post_item.description }} </h2>
-                <h2 class="text-center"> {{ post_item.pub_date|timesince }} </h2>
+                <img src="https://res.cloudinary.com/dpusync50/{{photo.image_url}}" class="img-responsive" alt="Image" style="height: 200px; width: 300px; ">
             </div>
+            {% endfor %}
         </div>
-    </div>
-    <!--Display  Galore images  -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 display" style="margin-top: 10px; ">
-        <a href="">
-            <p src="{{post_item.image.url}}" class="img-responsive" alt="Image" style="height: 200px; width: 300px; "></p>
-        </a>
     </div>
 </div>
 
-{%endfor%} </div>{%endblock%}
+
+
+
+
+</div>{%endblock%}

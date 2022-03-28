@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pictures.apps.PicturesConfig',
-    'bootstrap5'
+    'bootstrap5',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -87,6 +89,17 @@ DATABASES = {
     'PASSWORD':'kimachas',
     }
 }
+# adding config
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
+cloudinary.config( 
+  cloud_name = "dpusync50", 
+  api_key = "844883543182319", 
+  api_secret = "0ZkV4QOC5yPqtDdIUSC2ItHlBRs" 
+)
 
 
 # Password validation
