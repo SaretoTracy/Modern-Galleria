@@ -1,20 +1,32 @@
 {%extends 'base.html'%} {% block content %} {{block.super}}
-<div class="col-sm-4 col-md-4 navbar-right">
+
+<div class="intro">
+    <div class="par">
+        <h3>We Don't Make Gallery.<br> We Make Gallery Better</h3><br><br>
+        <div class=" ">
 
 
-    <form class="navbar-form" role="search" action="{% url 'photo_location' %}">
+            <form class="navbar-form" role="search" action="{% url 'photo_location' %}">
 
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search by location" name="galore">
-            <div class="input-group-btn">
-                <button class="btn btn-default " type="submit">Search</button>
-            </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search by location" name="galore">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default " type="submit">Search</button>
+                    </div>
+                </div>
+
+            </form>
+        </div><br>
+        <h5>View it now, enjoy it more</h5>
+
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <h4>Modern Galleria</h4>
         </div>
-
-    </form>
+    </div>
 </div>
 
-<h1>WELCOME</h1>
 <div class="row">
     <!-- Looping through post   -->
     <div class="container-fluid">
