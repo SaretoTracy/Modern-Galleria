@@ -21,24 +21,20 @@
 
     </div>
     <div class="wrapper">
-        <div class="container">
+        <div class="container gall">
             <h4>Modern Galleria</h4>
         </div>
     </div>
 </div>
-
-<div class="row">
-    <!-- Looping through post   -->
-    <div class="container-fluid">
-        <div class="row">
-            {% for post_item in posts %}
-            <!-- displaying post images -->
-            <div class="col-md-4 mt-3">
-                <img src="https://res.cloudinary.com/dpusync50/{{photo.image_url}}" class="img-responsive" alt="Image" style="height: 200px; width: 300px; ">
-            </div>
-            {% endfor %}
-        </div>
+<div class="container-fluid">
+    <div class="row">
+        {% for pic in posts %}
+        <!-- displaying post images -->
+        <div class="col-md-4 mt-3">
+            <img src="{{pic.image.url}}" data-target="#imageModal{{pic.id}}" data-toggle="modal" alt="" class="img-fluid" id="eachimage" style="height: 400px; width: 300px"> </div>
     </div>
+    {% endfor %}
+</div>
 </div>
 
 

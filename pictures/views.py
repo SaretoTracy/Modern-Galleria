@@ -9,6 +9,7 @@ def main(request):
 
     # Function that gets the date
     post = Galore.objects.all()
+    
     return render(request, 'main.html',{"posts":post})
 
 def search_results(request):
