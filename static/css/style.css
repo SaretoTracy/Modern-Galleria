@@ -63,3 +63,8 @@ h4 {
 h2 {
     color: blue;
 }
+
+.one {
+    padding: 6rem;
+    padding-left: 20rem;
+}
