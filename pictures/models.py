@@ -38,7 +38,6 @@ class Galore(models.Model):
         self.delete()
     @classmethod
     def days_post(cls):
-        today = dt.date.today()
         post = cls.objects.filter(pub_date__date = today)
         return post
     @classmethod
