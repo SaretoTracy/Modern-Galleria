@@ -61,10 +61,14 @@ h4 {
 }
 
 h2 {
-    color: blue;
+    color: #f1b211;
 }
 
 .one {
     padding: 6rem;
     padding-left: 20rem;
+}
+
+h5 {
+    color: #e83611;
 }
