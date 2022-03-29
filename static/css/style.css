@@ -72,3 +72,8 @@ h2 {
 h5 {
     color: #e83611;
 }
+
+p {
+    font-size: 2opx;
+    line-height: 26px;
+}
