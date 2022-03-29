@@ -3,6 +3,10 @@
     background: linear-gradient(90deg, rgba(232, 60, 24, 1) 0%, rgba(232, 60, 24, 1) 35%, rgba(241, 178, 37, 1) 100%);
 }
 
+a {
+    text-decoration: none;
+}
+
 .intro {
     display: flex;
     justify-content: space-around;
